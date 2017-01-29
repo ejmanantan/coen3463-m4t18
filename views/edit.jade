@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .row
+    .col-md-4
+    .col-md-4
+      h1 
+       center Edit a Recipe
+      form(role="form", method="post", action="/recipes/#{recipe.id}")
+        include editform
+        label(for="email") Update Date
+        input#date.form-control(name="ud", type="date", value=recipe.ud)
+        button.btn.btn-primary(type="submit") Edit user
+
+   

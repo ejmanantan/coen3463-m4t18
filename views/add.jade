@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	.row
+			.col-md-4
+			.col-md-4
+				h1 Add a Recipe
+				form(role="form", method="post", action="/recipes/")
+					include editform
+					.form-group
+						label(for="date") Created Date
+						input#date.form-control(name="cd", type="date", value=recipe.cd)
+					button.btn.btn-primary(type="submit") Add Recipe

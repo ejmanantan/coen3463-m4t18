@@ -1,0 +1,30 @@
+extend layout
+
+block content
+ center
+  h1 Your Recipe
+  p Filipino recipe
+  p
+    a#delete.btn.btn-default(hrer="#") Delete
+    |  
+    a#add.btn.btn-default(href="/recipes/add") Add new
+  table.table
+    thead
+      tr
+        th
+        th Recipe Name
+        th Created Date
+        th Updated Date
+    tbody
+      if !recipes.length
+        tr
+          td(colspan=4) You should add a recipe
+      else
+        each recipe in recipes
+          tr
+            td
+              input(type="checkbox", id=recipe.id)
+            td
+              a(href="/recipes/#{recipe.id}") #{recipe.name}
+            td #{recipe.cd}
+            td #{recipe.ud) 

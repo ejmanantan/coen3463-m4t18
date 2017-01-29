@@ -1,0 +1,13 @@
+extends layout
+
+block content
+ .container
+   h1 Recipe Guide
+   p Recipe Name: #{recipe.name}
+   p Recipe Ingredients: #{recipe.ing}
+   p Recipe Description: #{recipe.des}
+   p Recipe Youtube Link: #{recipe.yt}
+   p Recipe Creation Date: #{recipe.cd}
+   p Recipe Update Date: #{recipe.up}
+   br
+   a(href='/recipes/') Recipe List

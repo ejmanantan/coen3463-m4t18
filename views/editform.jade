@@ -1,0 +1,14 @@
+.form-group
+  label(for="fullname") Recipe Name
+  input#fullname.form-control(name="name", type="text", value=recipe.name)
+.form-group
+  label(for="job") Ingredients
+  br
+  Textarea(name="ingr",  value=recipe.ingr rows="6", cols="62")
+.form-group
+  label(for="nickname") Description
+  br
+  Textarea(name="des", value=recipe.des rows="6", cols="62")
+.form-group
+  label(for="youtube") Youtube Link
+  input#youtube.form-control(name="yt",  value=recipe.yt)

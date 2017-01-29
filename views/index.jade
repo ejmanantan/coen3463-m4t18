@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	.jumbotron
+		.container
+			h1 Presents
+			i
+				p "Top 25 FIlipino Recipe"
+		.container
+			.picsx
+				img(src='../images/logo1.jpg' height = '200px' width = '200px')
+	.container
+		.row
+			.col-md-5
+			.col-md-2
+				a.btn.btn-default(href="/recipes/") View Recipe
+				if (user)
+					br
+					p You are logged in as #{user.username}
+					a(href="/auth/logout")  logout
+				else
+					p
+					a(href="/auth/login") Please login
+					|  or
+					a(href="/auth/register")  register
+
+  
