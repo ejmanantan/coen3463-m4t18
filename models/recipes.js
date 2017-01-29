@@ -3,8 +3,14 @@ var Schema = mongoose.Schema;
 
 var contactSchema = new Schema({
   // id is created automatically
-  name: String,
-  ingr: String,
+  name: {
+        type: String
+        //required: [true, 'What is the Recipe Name?']
+  },
+  ingr: {
+        type: String
+       // required: [true, 'What are the Ingredients?']
+  },
   des: String,
   yt: String,
   cd: String,

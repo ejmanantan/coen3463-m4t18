@@ -1,10 +1,10 @@
 .form-group
   label(for="fullname") Recipe Name
-  input#fullname.form-control(name="name", type="text", value=recipe.name)
+  input#fullname.form-control(name="name", type="text", value=recipe.name, oninvalid="this.setCustomValidity('Enter the Recipe Name')",  oninput="setCustomValidity('')", required)
 .form-group
   label(for="job") Ingredients
   br
-  Textarea(name="ingr",  value=recipe.ingr rows="6", cols="62" ) #{recipe.ingr}
+  Textarea(name="ingr",  value=recipe.ingr rows="6", cols="62", oninvalid="this.setCustomValidity('Enter the Ingredients required')", oninput="setCustomValidity('')", required) #{recipe.ingr}
   .form-group
   label(for="nickname") Description
   br
