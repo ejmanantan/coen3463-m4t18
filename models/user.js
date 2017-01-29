@@ -3,7 +3,10 @@ var mongoose = require('mongoose'),
     passportLocalMongoose = require('passport-local-mongoose');
 
 var User = new Schema({
-    nickname: String,
+    nickname: {
+        type: String,
+       // required: [true, 'What is the Recipe Name?']
+  },
     birthdate: Date
 });
 

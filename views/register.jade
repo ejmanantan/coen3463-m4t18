@@ -5,10 +5,10 @@ block content
     form(role="form", action="/auth/register", method="post")
         .form-group
             label(for="username") Username
-            input#username.form-control(name="username", type="text")
+            input#username.form-control(name="username", minlength = '8', type="text", required)
         .form-group
             label(for="password") Password
-            input#password.form-control(name="password", type="password")
+            input#password.form-control(name="password", type="password" required)
         p
-            a.btn.btn-link(href="/contacts") Cancel
+            a.btn.btn-link(href="/") Cancel
             button.btn.btn-default(type="submit", value="Register") Register
