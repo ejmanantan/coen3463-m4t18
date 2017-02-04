@@ -5,7 +5,7 @@ block content
   h1 Your Recipe
   p Filipino recipe
   p
-    a#delete.btn.btn-default(hrer="#") Delete
+    
     |  
     a#add.btn.btn-default(href="/recipes/add") Add new
   table.table
@@ -23,7 +23,7 @@ block content
         each recipe in recipes
           tr
             td
-              input(type="checkbox", id=recipe.id)
+              
             td
               a(href="/recipes/#{recipe.id}") #{recipe.name}
             td #{recipe.cd}

@@ -70,23 +70,10 @@ router.route('/:recipe_id')
       }
     });
   })
-/*
- router.delete( '/recipes', function(req, res) {
-  var recipeId = req.params.recipeId;
-    recipe.remove({ _id: recipeId },function(err, recipe) {
-      if(err) {
-        res.status(400).send("Error removing contact: " + err);
-      } else {
-            console.log("Deleting Data Successful!");
-            res.redirect('/recipes/')
-      }
-    });
-  });
-*/
-    /*router.get('/recipes/:recipeId/delete', function(req, res) {
-        var recipeId = req.params.recipeId;
-        var recipeCollection = db.collection('recipes');
-        recipeCollection.deleteOne({ _id: new ObjectId(recipeId)}, function(err, food) {
+
+ router.get('/:recipe_id/delete', function(req, res) {
+       var recipe_id = req.params.recipe_id;
+      Recipe.findByIdAndRemove(req.params.recipe_id, function(err, food) {
             if(err){
             return console.log(err)
             }
@@ -95,7 +82,5 @@ router.route('/:recipe_id')
             
         });
     });
-
-*/
 
 module.exports = router;
