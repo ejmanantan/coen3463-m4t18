@@ -17,6 +17,7 @@ var auth = require('./routes/auth');
 var recipes= require('./routes/recipes');
 var app = express();
 
+
 var mdburl = "mongodb://food:recipe@ds111589.mlab.com:11589/coen3463t18"
 
 mongoose.connect(mdburl, function(err, res) {
@@ -26,6 +27,7 @@ mongoose.connect(mdburl, function(err, res) {
         console.log('MongoDB connected!');
     }
 });
+
 
 
 // view engine setup
@@ -62,6 +64,10 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/auth/', auth);
 app.use('/recipes/', recipes);
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

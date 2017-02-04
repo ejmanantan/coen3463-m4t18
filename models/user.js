@@ -4,8 +4,7 @@ var mongoose = require('mongoose'),
 
 var User = new Schema({
     nickname: {
-        type: String,
-       // required: [true, 'What is the Recipe Name?']
+        type: String
   },
     birthdate: Date
 });

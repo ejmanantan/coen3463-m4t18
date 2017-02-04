@@ -10,6 +10,9 @@ block content
         include editform
         label(for="email") Update Date
         input#date.form-control(name="ud", type="date", value=recipe.ud)
+        br
         button.btn.btn-primary(type="submit") Edit Recipe
+        |   
+        a(href='/recipes/' + recipe._id+'/delete') delete
 
    

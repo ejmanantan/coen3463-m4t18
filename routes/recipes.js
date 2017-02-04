@@ -53,20 +53,7 @@ router.route('/:recipe_id')
     res.render('edit', {recipe: recipe, moment: moment});
   })
 
-/*
-router.put('/:id/update', function (req,res){
-  var id = req.params.id;
 
-  Recipe.findOne({_id: id}, function (err, foundObject){
-      if(err) {
-        res.status(400).send('Error saving contact: ' + err);
-      } else {
-        console.log("updated!");
-        res.redirect('/recipes');
-      }
-  });
-});
-*/
 
   .post(function(req, res) {
       recipe.name= req.body.name,
@@ -84,22 +71,6 @@ router.put('/:id/update', function (req,res){
     });
   })
 /*
-.post(function(req, res) {
-    recipe.notes.push({
-      note: req.body.notes
-    });
-
-    recipe.save(function(err, recipe, count) {
-      if(err) {
-        res.status(400).send('Error adding note: ' + err);
-      } else {
-        res.send('Note added!');
-      }
-    });
-  })
-
-
-*/
  router.delete( '/recipes', function(req, res) {
   var recipeId = req.params.recipeId;
     recipe.remove({ _id: recipeId },function(err, recipe) {
@@ -111,17 +82,11 @@ router.put('/:id/update', function (req,res){
       }
     });
   });
-
-
-
-
-/*
-
-
-   router.get('/:recipeId/delete', function(req, res) {
+*/
+    /*router.get('/recipes/:recipeId/delete', function(req, res) {
         var recipeId = req.params.recipeId;
         var recipeCollection = db.collection('recipes');
-        recipeCollection.deleteOne({ _id: new ObjectId(recipeId)}, function(err, recipe) {
+        recipeCollection.deleteOne({ _id: new ObjectId(recipeId)}, function(err, food) {
             if(err){
             return console.log(err)
             }
