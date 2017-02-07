@@ -1,27 +1,51 @@
 extends layout
 
 block content
-	.jumbotron
-		.container
-			h1 Presents
-			i
-				p "Top 25 FIlipino Recipe"
-		.container
-			.picsx
-				img(src='../images/logo1.jpg' height = '200px' width = '200px')
-	.container
-		.row
-			.col-md-5
-			.col-md-2
-				a.btn.btn-default(href="/recipes/") View Recipe
-				if (user)
-					br
-					p You are logged in as #{user.username}
-					a(href="/auth/logout")  logout
-				else
-					p
-					a(href="/auth/login") Please login
-					|  or
-					a(href="/auth/register")  register
-
-  
+  .jumbotron
+    .container
+      h1 Presents
+      i
+        p "Top 25 FIlipino Recipe"
+    .container
+      .picsx
+        img(src='../images/logo1.jpg' height = '200px' width = '200px')
+  .container
+    .row
+      .col-md-5
+      .col-md-2
+        if (!user)
+          .container
+            .row.black-text
+              .col.s12.m6.l6.center.flow-text
+                a.black-text(href= '/auth/login')
+                  .card.accent-2
+                    i.fa.fa-sign-in.large
+                    br
+                    b
+                      | Log-in
+              .col.s12.m6.l6.center.flow-text
+                a.black-text(href= '/auth/register')
+                  .card.accent-2
+                    i.fa.fa-user-plus.large
+                    br
+                    b
+                    | Sign-up
+        else
+          .container
+            .row.black-text
+              .col.s12.m12.l12.center.flow-text.white-text
+                  h2
+                    if (user.first_name == "")
+                      b
+                        | Hello #{user.username}
+                    else
+                      b
+                        | Hello #{user.username}
+              .col.s12.m12.l12.center.flow-text
+                .container
+                  a.black-text(href= '/auth/logout')
+                  .card.accent-2
+                    i.fa.fa-sign-out.large
+                    br
+                    b
+                    | Logout

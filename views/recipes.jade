@@ -8,6 +8,9 @@ block content
     
     |  
     a#add.btn.btn-default(href="/recipes/add") Add new
+    br
+    br
+    h4#nrec.center
   table.table
     thead
       tr
@@ -15,16 +18,4 @@ block content
         th Recipe Name
         th Created Date
         th Updated Date
-    tbody
-      if !recipes.length
-        tr
-          td(colspan=4) You should add a recipe
-      else
-        each recipe in recipes
-          tr
-            td
-              
-            td
-              a(href="/recipes/#{recipe.id}") #{recipe.name}
-            td #{recipe.cd}
-            td #{recipe.ud) 
+    tbody#data

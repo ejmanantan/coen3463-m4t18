@@ -1,13 +1,45 @@
 extends layout
 
 block content
-	.row
-			.col-md-4
-			.col-md-4
-				h1 Add a Recipe
-				form(role="form", method="post", action="/recipes/")
-					include editform
-					.form-group
-						label(for="date") Created Date
-						input#date.form-control(name="cd", type="date", value=recipe.cd)
-					button.btn.btn-primary(type="submit") Add Recipe
+  .row
+    .col-md-4
+    .col-md-4
+      h1.center Add a Recipe
+      br
+      form(method= 'POST', action= '/recipes/add', onsubmit= 'return validateForm()')
+        .container
+              | Recipe Name
+              br
+              input.white.black-text#title(type= 'text', placeholder= "NodeJS Tutorial for Beginners", name= 'title')
+
+            .col.s12.m12.l12
+              br
+              | Ingredients
+              br
+              textarea.materialize-textarea.white.black-text#ingr(name= 'ingr', placeholder= 'Ingredients of the Recipe')
+
+              .col.s12.m12.l12
+                br
+              | Description
+              br
+              textarea.materialize-textarea.white.black-text#des(name= 'des', placeholder= 'Description of the Recipe')
+
+            .col.s12.m12.l6
+              br
+              | YouTube Link of the Recipe
+              br
+              input.white.black-text#yt(type= 'text', placeholder= "https://www.youtube.com/watch?v=M8N7fMidbBs/", name= 'yt')
+
+            .col.s12.m12.l6
+              br
+              | Date Created
+              br
+              input.white.black-text#cd(type= 'date', placeholder= "01/01/2017", name= 'cd')
+
+            .col.s12.m6.l4
+              br
+              button.waves-effect.waves-white.btn-flat.blue
+                | Submit Entry
+            .col.s12.m6.l4
+              p= status
+  br

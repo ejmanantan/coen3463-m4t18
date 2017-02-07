@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+passportLocalMongoose = require('passport-local-mongoose');
 
-var contactSchema = new Schema({
+var recipesSchema = new Schema({
   // id is created automatically
   name: {
         type: String
@@ -15,13 +16,10 @@ var contactSchema = new Schema({
   yt: String,
   cd: String,
   ud: String,
-  notes: [{
-    postedDate: {
-      type: Date,
-      'default': Date.now
     },
-    note: String
-  }]
+    {
+collection: 'recipes'
+
 });
 
-module.exports = mongoose.model('Recipe', contactSchema);
+module.exports = mongoose.model('Recipe', recipesSchema);

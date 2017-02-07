@@ -1,15 +1,30 @@
 extends layout
 
 block content
-    h1 Please login
-    form(role="form", action="/auth/login", method="post")
-        .form-group
-            label(for="username") Username 
-            input#username.form-control(name="username", pattern='[A-Za-z]{8,}'  type="text", required, width = '300px'
-            )
-        .form-group
-            label(for="password") Password
-            input#password.form-control(name="password", type="password", required)
-        p
-            a.btn.btn-link(href="/") Cancel
-            button.btn.btn-default(type="submit", value="Log In") Log in
+  br
+
+  .inputfield
+    form(method= 'post', action= '/auth/login')
+      .container.rown
+        h3.blue-text.center Member Login!
+
+        .row.center
+          .col.s12.m12.l12
+            .input-field.col.white-text
+              input#username.validate(type='text', name= 'username', pattern= '[A-Za-z]{8,}', required)
+              label(for='first_name') Username
+          .col.s12.m12.l12
+            .input-field.col.white-text
+              input#password.validate(type='password', name= 'password', required)
+              label(for='password') Password
+        br 
+        .row.center
+          button.btn.waves-effect.waves-light(type='submit', name='action')
+            | Login
+            
+
+        .row
+          p.center.white-text
+              | Don't have account? Click 
+              b
+                a.blue-text.link(href= '/auth/register') Sign-Up     

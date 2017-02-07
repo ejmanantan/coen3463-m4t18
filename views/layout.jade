@@ -21,12 +21,18 @@ html
           ul.nav.navbar-nav
             li.active
               a(href='/') Home
+              
+            li.active
+              a(href='/recipes') All List
+            li.active
+              a(href='/recipes/add') Add a Recipe
+            if (user)
+              li.active
+                a(href='/auth/logout') Logout
     block content
-    footer
-        p &copy; 2017, All Rights Reserved
+     // Footer of the website
+  
 
-    script(type="text/javascript", src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
-    script(type="text/javascript", src='/javascripts/bootstrap.js')
-
-    script(type="text/javascript", src="/javascripts/jquery-min.js")
-    script(type="text/javascript", src="/javascripts/main.js")
+    script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js')
+    script(type='text/javascript', src= '../../javascripts/script.js')
